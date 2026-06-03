@@ -2,9 +2,9 @@
    VARIABLES & THEME
    ========================================= */
 :root {
-    --background: #000000; /* Pure Black */
-    --accent: #e29c0d;     /* New Custom Accent Color */
-    --text-main: #E0E0E0;  /* Off-white for readability on pure black */
+    --background: #000000; 
+    --accent: #e29c0d;     
+    --text-main: #E0E0E0;  
     --text-muted: #888888;
 }
 
@@ -42,15 +42,6 @@ a:hover {
     filter: brightness(1.2);
 }
 
-p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-    max-width: 750px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 /* =========================================
    LAYOUT & CONTAINERS
    ========================================= */
@@ -60,7 +51,7 @@ p {
     padding: 3rem 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem; /* Tightened the overall gap between sections */
 }
 
 /* =========================================
@@ -68,10 +59,10 @@ p {
    ========================================= */
 .banner {
     display: block;
-    margin: 0 auto 2rem auto;
+    /* Reduced margin-bottom drastically to pull the icons up closer */
+    margin: 0 auto 0.5rem auto; 
     max-width: 100%;
-    width: 400px;
-    animation: floatAnim 4s ease-in-out infinite alternate;
+    width: 250px; /* Shrunk from 400px */
 }
 
 /* =========================================
@@ -82,12 +73,12 @@ p {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1.5rem;
-    margin: 0 auto 2rem auto;
+    margin: 0 auto;
 }
 
 .item-social {
     transform: scale(0.8);
-    filter: drop-shadow(0px 0px 6px var(--accent)); /* Glow uses the new accent color */
+    /* Glow effect completely removed */
 }
 
 .icon {
@@ -105,6 +96,13 @@ p {
     padding: 2rem 0;
     border-top: 1px solid #222;
     border-bottom: 1px solid #222;
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto; /* By setting margin to 0 top/bottom, the padding creates perfectly even spacing */
 }
 
 /* =========================================
@@ -132,7 +130,7 @@ p {
 .capsule-button {
     display: block;
     width: 100%;
-    max-width: 600px; /* Keeps the capsule image from getting too massive on desktop */
+    max-width: 600px; 
 }
 
 .capsule-button img {
@@ -140,21 +138,21 @@ p {
     height: auto;
     border-radius: 15px;
     border: 2px solid var(--accent);
-    box-shadow: 0 8px 0 #8a5e06; /* Darker shade of the accent color for the 3D press effect */
-    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    box-shadow: 0 8px 0 #8a5e06; 
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .capsule-button img:hover {
     transform: translateY(4px);
-    box-shadow: 0 4px 0 #8a5e06; /* Satisfying physical press animation */
-    filter: brightness(1.15);
+    box-shadow: 0 4px 0 #8a5e06; 
+    /* Removed the brightness filter so the color stays exactly the same */
 }
 
 /* =========================================
    FOOTER
    ========================================= */
 footer {
-    margin-top: 2rem;
+    margin-top: 1rem;
     text-align: center;
 }
 
@@ -165,14 +163,6 @@ footer {
 }
 
 /* =========================================
-   ANIMATIONS
-   ========================================= */
-@keyframes floatAnim {
-    0% { transform: translateY(-5px); }
-    100% { transform: translateY(5px); }
-}
-
-/* =========================================
    MOBILE ADJUSTMENTS
    ========================================= */
 @media screen and (max-width: 600px) {
@@ -180,7 +170,7 @@ footer {
         font-size: 1.8rem;
     }
     
-    p {
+    .about-section p {
         font-size: 1.05rem;
     }
 }
